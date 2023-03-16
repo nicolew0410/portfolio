@@ -6,90 +6,120 @@
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
-  <body style = "background: black;" data-spy="scroll" data-target=".navbar" data-offset="50">
+  <body style = "background: black;">
     <script>
       function scrollDown(x, y) {
         window.scrollBy(x, y);
       }
     </script>
-    <script>
-      var slideIndex = 1; //Indicates its starting value, will be a counter for whichever slide is being shown
-      showSlides(slideIndex); //The callback function to showSlides() with the index of the counter which is manipulated by functions plusSlides and showSlides
-      function plusSlides(n) { //Corresponds to "plusSlides" in HTML, this is the function that runs it as the slideIndex, our counter, is added and equaled to n, our current picture value.
-        showSlides(slideIndex += n);
-      }
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      function showSlides(n) { //The actual display of the slideshow containing the pictures
-        var i; // defining a value for for loops because they have a 3 part syntax, this is identified as the counter
-        var slides = document.getElementsByClassName("mySlides"); //.getElementsByClassName is a DOM selector, finding where the class is used and manipulating it into the variable "slides"
-        if (n > slides.length) {slideIndex = 1} // This is a reset mechanism, if n ever gets bigger than the actual length, it will return to its original picture. .length acts as the dot syntax to find the amount of elements are in slides.
-        if (n < 1) {slideIndex = slides.length} // Similar to what was previously said, lines 70-74 keep the mechanism going on for forever no matter how many times they click.
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slides[slideIndex-1].style.display = "block";
-      }
-    </script>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow-5-strong textNav">
-      <div class="container">
-        <a class="navbar-brand" href="#" style = "margin-left:45px; padding:0px; font-size: 100px; font-family: font; margin-top:-10px;" >nicole &nbsp wong</a>
-        <ul class="navbar-nav" style = "margin-right: 45px; margin-top:-10px;">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Home • </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Projects • </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://github.com/nicolew0410" class="nav-link">Github</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div>
+      <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow-5-strong textNav">
+        <div class="container viz">
+          <a class="navbar-brand" href="#" style = "margin-left:45px; padding:0px; font-size: 100px; font-family: font; margin-top:-10px;" >nicole &nbsp wong</a>
+          <ul class="navbar-nav" style = "margin-right: 45px; margin-top:-10px;">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home • </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Projects • </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://github.com/nicolew0410" class="nav-link">Github</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
     <!-- First Container -->
     <div class="container-fluid">
       <img src = "HEAR_Far.png" class = "bg"/>
     </div>
+    <div style = "position: absolute" >
+      <div class="slideshow-container" style = "z-index: -1;position:static; margin-left: 8vh; margin-top: -2vh;"> <!-- Cite and Taken from: https://www.w3schools.com/howto/howto_js_slideshow.asp-->
+        <div class="mySlides"> <!--Categorized under the div class to show the fading of the screen after each and every picture is scrolled which is under the class "fade"-->
+          <div class="numbertext">1 / 6</div> <!-- Number to tell the user which picture they are on out of the gallery. The first number shows its current value and the second number shows the amount of pictures available in the slideshow.-->
+          <img src="HEAR_Far.png" style="width:100%"> 
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="HEAR_Inner.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="DREA_Far.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="DREA_Int.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="DREA_Marry.png" style="width:100%">
+          </div>
+          <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="DREA_Far.png" style="width:100%">
+          </div>
+          <button onclick="scrollDown(0, 830)" class = "arrow" style = "z-index: 1; margin-left: 70vh; margin-top: -4vh; position:absolute; width: 14vh; height: 12vh;"><img src = "https://static.wixstatic.com/media/a8a55c_27981d4b4cfd4302b1a23b7a75135fed~mv2.gif" class= "dropImage"></button>
+          <a class="prev" onclick="plusSlides(-1)"><</a> <!-- These correspond to the numbered pictures described previously, these buttons act as a previous and next button by subtracting the current slide they are on-->
+          <a class="next" onclick="plusSlides(1)" style = "margin-right:5vh;">></a>
+          <div style="text-align:center">
+            <span onclick="currentSlide(1)"></span> 
+            <span onclick="currentSlide(2)"></span> 
+            <span onclick="currentSlide(3)"></span> 
+            <span onclick="currentSlide(4)"></span> 
+            <span onclick="currentSlide(5)"></span> 
+            <span onclick="currentSlide(6)"></span> 
+          </div>
+      </div>
+    </div>
+    
+      <script src = "projects.js"></script>
+      <!-- Projects -->
+      <p class = "textStyle1" style = "font-size: 100px; margin-left: 65vh; margin-top: 100vh; position: static;"> PROJECTS </p><br> <br> <br>
+      <div style = "display: flex; justify-content: center; align-items: center;">
+        <div class = "galleryImages" style = "margin-left: 2vh;">
+          <img src="pattern1.png" alt="Geometric Pattern Testing" width="500" height="500"/>
+          <img src="cafe.png" alt="Beautique Cafe" width="900" height="500"/>
+          <img src="babylon2.png" alt="Scifi Gardens of Babylon - 1" width="900" height="550"/>
+          <img src="babylon1.png" alt="Scifi Gardens of Babylon - 2" width="500" height="550"/>
+          <img src="https://i.gyazo.com/2d10687db690defa291fcb821379c6e5.gif" alt="Scifi Gardens of Babylon - A Visual" width="1400" height="650";/>
+          <img src="arch2.png" alt="Architectural Piece - Top" width="500" height="500" style = "object-fit: cover;"/>
+          <img src="arch1.png" alt="Architectural Piece - Outside" width="900" height="500"/>
+          <img src="archins.png" alt="Architectural Piece - Inside" width="900" height="550"/>
+          <img src="archMansion.png" alt="Architectural Piece - Inside" width="500" height="550"style = "object-fit: cover;"/>
+          <img src="DREA_Far.png" alt="A Valentine Dream - Outside" width="1400" height="650" style = "filter: brightness(0.85)";/>
+          <img src="purple2.png" alt="Fairy Island - 1" width="500" height="500" style = "object-fit: cover;"/>
+          <img src="purple1.png" alt="Fairy Island - 2" width="900" height="500"/>
+          <img src="purple3.png" alt="Fairy Island - 3" width="900" height="550"/>
+          <img src="salon1.png" alt="Salon - Booth" width="500" height="550"style = "object-fit: cover;"/>
+          <img src="HEAR_Far.png" alt="Woodsy Pinks - Landscape" width="1400" height="650" style = "filter: brightness(0.85)";/>
+          <img src="salon2.png" alt="Salon - Landscape" width="1400" height="650" />
+          <img src="FREE_Mush2.png" alt="Mushroom Village" width="500" height="500" style = "object-fit: cover;"/>
+          <img src="salon3.png" alt="Salon - Sauna" width="900" height="500"/>
+          <img src="https://i.gyazo.com/4ecafd6ab9609522450fa30c55c55f99.gif" alt="Generative p5js Art - Cosmic" width="900" height="550"/>
+          <img src="sketch.png" alt="Generative p5js Art - Abstract" width="500" height="550"style = "object-fit: cover;"/>
+          <img src="DREA_Marry.png" alt="A Valentine Dream - Landscape" width="1400" height="650" style = "filter: brightness(0.85)";/>
+          <img src="HEAR_Inner.png" alt="Woodsy Pinks - Inside" width="1400" height="650" style = "filter: brightness(0.85)";/>
 
-    <div class="slideshow-container" style = "z-index: -1; height: 73vh;width: 85vw; position:absolute; margin-left: 17vh; margin-top: -2vh;"> <!-- Cite and Taken from: https://www.w3schools.com/howto/howto_js_slideshow.asp-->
-      <div class="mySlides"> <!--Categorized under the div class to show the fading of the screen after each and every picture is scrolled which is under the class "fade"-->
-        <div class="numbertext">1 / 6</div> <!-- Number to tell the user which picture they are on out of the gallery. The first number shows its current value and the second number shows the amount of pictures available in the slideshow.-->
-        <img src="HEAR_Far.png" style="width:100%"> 
-      </div>
-      <div class="mySlides">
-          <div class="numbertext">2 / 6</div>
-          <img src="HEAR_Inner.png" style="width:100%">
         </div>
-        <div class="mySlides">
-          <div class="numbertext">3 / 6</div>
-          <img src="DREA_Far.png" style="width:100%">
+        <div class = "modalContainer">
+          <span class="xClose" >x</span>
+          <div class = "modalContent">
+            <img src = "" class = "modalImg" />
+            <span class = "caption">Geometric Pattern Testing</span>
+          </div>
         </div>
-        <div class="mySlides">
-          <div class="numbertext">4 / 6</div>
-          <img src="DREA_Int.png" style="width:100%">
-        </div>
-        <div class="mySlides">
-          <div class="numbertext">5 / 6</div>
-          <img src="DREA_Marry.png" style="width:100%">
-        </div>
-        <div class="mySlides">
-          <div class="numbertext">6 / 6</div>
-          <img src="DREA_Far.png" style="width:100%">
-        </div>
-
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- These correspond to the numbered pictures described previously, these buttons act as a previous and next button by subtracting the current slide they are on-->
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      <div style="text-align:center">
-        <span onclick="currentSlide(1)"></span> 
-        <span onclick="currentSlide(2)"></span> 
-        <span onclick="currentSlide(3)"></span> 
-        <span onclick="currentSlide(4)"></span> 
-        <span onclick="currentSlide(5)"></span> 
-        <span onclick="currentSlide(6)"></span> 
-      </div>
-      </div>
+      <div>
+      <script src = "projects2.js"></script>
+      <br>
+      <br>
+      <br>
+      <div class = "socials">
+      <a href = "https://www.instagram.com/n_colez"><img src = "https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-white-glyph.png"class = "imgResize2" /></a><hr>
+      <a href = "https://www.roblox.com/users/88362345/profile"><img src = "https://companieslogo.com/img/orig/RBLX.D-c637719c.png?t=1648060951"class = "imgResize2" /></a><hr>
+      <a href = "https://www.youtube.com/channel/UC6Erbu2hsNTZqjhx7tkfZiw"><img src = "http://clipart-library.com/images/dc4LABqni.png"class = "imgResize2" style = "height: 4vh"/></a>
+    </div>
   </body>
 </html>
