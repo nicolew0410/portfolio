@@ -1,0 +1,135 @@
+@font-face{
+  font-family:font;
+  src: url("p.otf")
+}
+@font-face{
+  font-family:font2;
+  src: url("l.ttf")
+}
+@font-face{
+  font-family:font3;
+  src: url("y.otf")
+}
+.bg{
+height: 100vh;
+width: 100vw;
+object-fit: cover;
+filter:brightness(0.5);
+position:absolute;
+top: 0;
+left: 0;
+z-index: -1;
+}
+.textNav{
+	font-size: 30px;
+	font-family:font2;
+}
+.textStyle1{
+  color:white;
+  font-size:3.8vh;
+  z-index:1;
+  line-height:35px;
+  font-family:font3;
+}
+.textStyle2{
+  color:black;
+  font-size:60px;
+  z-index:1;
+  line-height:90px;
+  font-family:font3;
+}
+.heading{
+ 	background-color:rgba(0,0,0, 0.3);
+	margin-top:20vh;
+	margin-left:20vh;
+ 	height:5vh;
+  	width:54vh;
+}
+.heading2{
+ 	background-color:rgba(255,255,255, 0.3);
+	margin-top:0vh;
+	margin-left:20vh;
+ 	height:10vh;
+  	width:70vh;
+}
+.subject{
+	background-color:rgba(255,255,255, 0.1);
+	margin-top:-58vh;
+	margin-left:85vh;
+ 	height:60vh;
+  	width:80vh;
+  	position:absolute;
+  	filter:brightness(0.9);
+}
+.arrow{
+	width: 6%;
+	height:6%;
+	margin-top:20vh;
+	margin-left: 90vh;
+	background: none;
+	color: inherit;
+	border: none;
+	outline: inherit;
+}
+.dropImage{
+	width: 100%; 
+	height:100%;
+}
+.imgResize1{
+	width:30%;
+	height:30%;
+	margin-left:15vh;
+}
+.socials{
+	position:fixed; 
+	bottom: 3vh; 
+	color:white;
+	right:3vh;
+	filter:brightness(0.9);
+}
+.imgResize2{
+	width:5vh;
+	height:5vh;
+}
+
+* {box-sizing:border-box}/* All of it is contained in this box */
+
+.slideshow-container { /* Contains images */
+  max-width: 150vh;
+  position: relative;
+  margin: auto;
+  border-width: 20px;
+  border-style:double;
+  border-color:rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.4);
+}
+.mySlides {
+  display:none;
+  margin-top: 0vh;
+}
+.prev, .next { /* Previous and Next buttons for the slideshow*/
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease; /*transition animation*/
+  border-radius: 0 3px 3px 0;
+  user-select: none;/*Do not let them choose*/
+}
+.next { /* next is positioned right */
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.numbertext { /* Text shown on top left hand corner*/
+  color: #f2f2f2;
+  font-size: 20px;
+  font-family: font3;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
