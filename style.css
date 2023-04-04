@@ -42,24 +42,26 @@ z-index: -1;
  	background-color:rgba(0,0,0, 0.3);
 	margin-top:20vh;
 	margin-left:20vh;
- 	height:5vh;
-  	width:54vh;
+ 	height:7vh;
+  width:56vh;
+  padding: 1.2vh;
 }
 .heading2{
  	background-color:rgba(255,255,255, 0.3);
 	margin-top:0vh;
 	margin-left:20vh;
- 	height:10vh;
-  	width:70vh;
+ 	height:11vh;
+  width:72vh;
+  padding: 1.2vh;
 }
 .subject{
 	background-color:rgba(255,255,255, 0.1);
 	margin-top:-58vh;
 	margin-left:85vh;
  	height:60vh;
-  	width:80vh;
-  	position:absolute;
-  	filter:brightness(0.9);
+  width:80vh;
+  position:absolute;
+  filter:brightness(0.9);
 }
 .arrow{
 	width: 6%;
